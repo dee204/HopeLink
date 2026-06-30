@@ -4,8 +4,8 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 COPY dist/*.war /usr/local/tomcat/webapps/ROOT.war
 
-RUN sed -i "s/port=\"8080\"/port=\"${PORT:-8080}\"/" /usr/local/tomcat/conf/server.xml
+RUN sed -i "s/port=\"8080\"/port=\"${PORT:-3000}\"/" /usr/local/tomcat/conf/server.xml
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["catalina.sh", "run"]
